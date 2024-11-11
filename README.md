@@ -38,7 +38,7 @@ git clone https://github.com/OT-MICROSERVICES/salary-api.git
 
 # Instalation of prerequisites required for salary-api
 
-### Scylladb Installation and configuration
+## Scylladb Installation and configuration
 
 ### Install a repo file and add the ScyllaDB APT repository to your system:
 
@@ -89,4 +89,33 @@ CREATE USER scylladb WITH PASSWORD 'password' SUPERUSER;
 
 CREATE KEYSPACE employee_db WITH REPLICATION = { 'class': 'SimpleStrategy', 'replication_factor': 1 };
 
+### Verify the empolyee_db
 
+DESCRIBE KEYSPACES;
+
+
+# Redis Installation and Configuration
+
+sudo apt update
+sudo apt install redis-server -y
+
+## Configuration of redis : Enter into redis
+
+redis-cli
+
+### Configure user permissions and authentication settings in redis
+
+ACL SETUSER scylla on >password ~* +@all
+
+### List the acl
+
+ACL LIST
+
+## Install Maven & Java depndancy
+
+sudo apt install openjdk-17-jre
+
+sudo apt install maven -y
+
+
+# Contact Information

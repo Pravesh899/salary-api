@@ -3,7 +3,7 @@
 # Purpose
 Salary API is a Java based microservice which is responsible for all the salary related transactions and records in OT-Microservices stack. The application is platform independent and can be run on multiple operating system. Java Runtime would be required to run this application.
 
-Supported features of the Salary API are:-
+Supported features of the Salary API are:
 
 Spring boot based web framework, which uses tomcat as webserver.
 ScyllaDB is used as primary database for storing all the salary data.
@@ -117,5 +117,61 @@ sudo apt install openjdk-17-jre
 
 sudo apt install maven -y
 
+## Instalation of swagger
 
+sudo apt  install jq -y
+
+download_url=$(curl -s https://api.github.com/repos/go-swagger/go-swagger/releases/latest | \jq -r '.assets[] | select(.name | contains("'"$(uname | tr '[:upper:]' '[:lower:]')"'_amd64")) | .browser_download_url')
+
+sudo curl -o /usr/local/bin/swagger -L'#' "$download_url"
+
+sudo chmod +x /usr/local/bin/swagger
+
+## Enter into salary-api directory
+
+cd salary-api/
+
+### update the contact-points & host in application.yaml to your private ip address from below paths
+
+sudo vi src/main/resources/application.yml
+
+sudo vi src/test/resources/application.yml
+
+### Create the service file for salary-api service
+
+sudo vi /etc/systemd/system/salary-api.service
+
+### Content of salary-api service:
+"""
+[Unit]
+
+Description=salary api
+After=network.target
+
+[Service]
+
+Type=simple
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/salary-api/
+ExecStart=java -jar /home/ubuntu/salary-api/target/salary-0.1.0-RELEASE.jar --server.port=8081
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+
+WantedBy=multi-user.target
+
+"""
+### Enable and start the salary-api service
+
+sudo systemctl enable salary-api.service
+sudo systemctl start salary-api.service
+
+### Restart the salary-api service
+sudo systemctl restart salary-api.service
+
+### 
 # Contact Information

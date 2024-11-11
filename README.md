@@ -33,7 +33,16 @@ Maven will be used as package manager to down# Step1: Installation of software D
 
 # System Requirements
 
+Processor	dual-core
+
+RAM	4GB
+
+Disk	20GB
+
+OS	Ubuntu(22.04)
+
 # Architecture
+
 
 # Step-by-step installation of [application]
 
@@ -119,6 +128,13 @@ ACL SETUSER scylla on >password ~* +@all
 ### List the acl
 
 ACL LIST
+### Update the redis config fike
+sudo vi /etc/redis/redis.conf
+
+#### update with private IP "bind 127.0.0.1 192.168.0.101"
+
+sudo systemctl restart redis
+redis-cli -h 192.168.0.101 -p 6379 ping
 
 ## Install Maven & Java depndancy
 

@@ -32,15 +32,15 @@ Maven will be used as package manager to down# Step1: Installation of software D
 
 sudo apt update
 
-## Clone the salary-api repo in your instance
+### Clone the salary-api repo in your instance
 
 git clone https://github.com/OT-MICROSERVICES/salary-api.git
 
 # Instalation of prerequisites required for salary-api
 
-## Scylladb Installation and configuration
+### Scylladb Installation and configuration
 
-## Install a repo file and add the ScyllaDB APT repository to your system:
+### Install a repo file and add the ScyllaDB APT repository to your system:
 
 sudo mkdir -p /etc/apt/keyrings
 
@@ -48,40 +48,40 @@ sudo gpg --homedir /tmp --no-default-keyring --keyring /etc/apt/keyrings/scyllad
 
 sudo wget -O /etc/apt/sources.list.d/scylla.list http://downloads.scylladb.com/deb/debian/scylla-6.2.list
 
-## Install ScyllaDB packages.
+### Install ScyllaDB packages.
 
 sudo apt-get update
 
 sudo apt-get install -y scylla
 
-## Configure I/O settings for ScyllaDB on your VM
+### Configure I/O settings for ScyllaDB on your VM
 
 sudo /opt/scylladb/scripts/scylla_io_setup
 
-## Update configuration file of scylla
+### Update configuration file of scylla
 
 sudo vi /etc/scylla/scylla.yaml
 
-Added the below lines in the config file:
+#### Added the below lines in the config file:
 
 authenticator: PasswordAuthenticator
 authorizer: CassandraAuthorizer
 
-Updated the rpc_address with server's private IP:
+#### Updated the rpc_address with server's private IP:
 
 rpc_address: 192.168.0.96
 
-## Restart the scylla-server service and check the status
+### Restart the scylla-server service and check the status
 
 sudo systemctl restart scylla-server.service
 
 sudo systemctl status scylla-server
 
-## Used below command to get into scylladb
+### Used below command to get into scylladb
 
 cqlsh 192.168.0.96 9042 -u cassandra -p cassandra
 
-## Created user ‘scylladb’ with password as ‘password
+### Created user ‘scylladb’ with password as ‘password
 
 CREATE USER scylladb WITH PASSWORD 'password' SUPERUSER;
 

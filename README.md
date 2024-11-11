@@ -54,3 +54,39 @@ sudo apt-get update
 
 sudo apt-get install -y scylla
 
+## Configure I/O settings for ScyllaDB on your VM
+
+sudo /opt/scylladb/scripts/scylla_io_setup
+
+## Update configuration file of scylla
+
+sudo vi /etc/scylla/scylla.yaml
+
+Added the below lines in the config file:
+
+authenticator: PasswordAuthenticator
+authorizer: CassandraAuthorizer
+
+Updated the rpc_address with server's private IP:
+
+rpc_address: 192.168.0.96
+
+## Restart the scylla-server service and check the status
+
+sudo systemctl restart scylla-server.service
+
+sudo systemctl status scylla-server
+
+## Used below command to get into scylladb
+
+cqlsh 192.168.0.96 9042 -u cassandra -p cassandra
+
+## Created user ‘scylladb’ with password as ‘password
+
+CREATE USER scylladb WITH PASSWORD 'password' SUPERUSER;
+
+### Created keyspace employee_db
+
+CREATE KEYSPACE employee_db WITH REPLICATION = { 'class': 'SimpleStrategy', 'replication_factor': 1 };
+
+

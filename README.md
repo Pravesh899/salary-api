@@ -152,26 +152,39 @@ sudo vi /etc/systemd/system/salary-api.service
 
 ### Content of salary-api service:
 """
+
 [Unit]
 
 Description=salary api
+
 After=network.target
+
 
 [Service]
 
 Type=simple
+
 User=ubuntu
+
 Group=ubuntu
+
 WorkingDirectory=/home/ubuntu/salary-api/
+
 ExecStart=java -jar /home/ubuntu/salary-api/target/salary-0.1.0-RELEASE.jar --server.port=8081
+
 Restart=on-failure
+
 RestartSec=5
+
 StandardOutput=journal
+
 StandardError=journal
+
 
 [Install]
 
 WantedBy=multi-user.target
+
 
 """
 ### Enable and start the salary-api service
@@ -182,5 +195,31 @@ sudo systemctl start salary-api.service
 ### Restart the salary-api service
 sudo systemctl restart salary-api.service
 
-### 
+## Install migration tool
+
+### Download the zip file of the migration tool(migrate)
+curl -L https://github.com/golang-migrate/migrate/releases/download/v4.15.2/migrate.linux-amd64.tar.gz | tar xvz
+
+### Move the file to below location
+sudo mv migrate /usr/local/bin/migrate
+
+### Check the version of migrate
+migrate --version
+
+### update below config files with public IP:
+cd /salary-api
+
+sudo vi src/main/java/com/opstree/microservice/salary/config/OpenAPIConfig.java 
+
+//
+devServer.setUrl("http://18.212.99.151:8080");
+//
+
+sudo vi src/test/java/com/opstree/microservice/salary/config/OpenAPIConfigTests.java 
+
+//
+assertEquals("http://18.212.99.151:8080", server.getUrl());
+//
+
+
 # Contact Information

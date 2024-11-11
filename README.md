@@ -28,3 +28,29 @@ Maven will be used as package manager to down# Step1: Installation of software D
 
 # Step-by-step installation of [application]
 
+## After creating an instance, first is to update the packages (instance type t2.medium volume 30GB)
+
+sudo apt update
+
+## Clone the salary-api repo in your instance
+
+git clone https://github.com/OT-MICROSERVICES/salary-api.git
+
+# Instalation of prerequisites required for salary-api
+
+## Scylladb Installation and configuration
+
+## Install a repo file and add the ScyllaDB APT repository to your system:
+
+sudo mkdir -p /etc/apt/keyrings
+
+sudo gpg --homedir /tmp --no-default-keyring --keyring /etc/apt/keyrings/scylladb.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys A43E06657BAC99E3
+
+sudo wget -O /etc/apt/sources.list.d/scylla.list http://downloads.scylladb.com/deb/debian/scylla-6.2.list
+
+## Install ScyllaDB packages.
+
+sudo apt-get update
+
+sudo apt-get install -y scylla
+

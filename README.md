@@ -221,5 +221,26 @@ sudo vi src/test/java/com/opstree/microservice/salary/config/OpenAPIConfigTests.
 assertEquals("http://18.212.99.151:8080", server.getUrl());
 //
 
+## Update the migration.json with private IP
+
+sudo vi migration.json
+
+## run the clean package inside the salary-api directory
+
+mvn clean package
+
+### Install make command
+
+sudo apt install make
+
+## Run the migration command
+
+make run-migrations
+
+## Run the java runtime command
+
+java -jar target/salary-0.1.0-RELEASE.jar
+
+
 
 # Contact Information

@@ -241,6 +241,15 @@ make run-migrations
 
 java -jar target/salary-0.1.0-RELEASE.jar
 
+## Error ##
+
+### Port is already is in use
+
+sudo lsof -i :8080
+
+sudo kill -9 <pid>
+
+Run the command again "java -jar target/salary-0.1.0-RELEASE.jar"
 
 
 # Contact Information

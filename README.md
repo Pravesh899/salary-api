@@ -43,6 +43,7 @@ OS	Ubuntu(22.04)
 
 # Architecture
 
+![Screenshot 2024-11-12 at 12 31 28 AM](https://github.com/user-attachments/assets/5e165de8-db61-4c61-a23d-c67027a0988e)
 
 # Step-by-step installation of [application]
 
@@ -53,6 +54,8 @@ sudo apt update
 ### Clone the salary-api repo in your instance
 
 git clone https://github.com/OT-MICROSERVICES/salary-api.git
+
+![Screenshot 2024-11-11 at 10 31 42 PM](https://github.com/user-attachments/assets/37c08836-cf5d-4dc3-bf9f-99f5b2abe207)
 
 # Instalation of prerequisites required for salary-api
 
@@ -66,19 +69,27 @@ sudo gpg --homedir /tmp --no-default-keyring --keyring /etc/apt/keyrings/scyllad
 
 sudo wget -O /etc/apt/sources.list.d/scylla.list http://downloads.scylladb.com/deb/debian/scylla-6.2.list
 
+![Screenshot 2024-11-11 at 10 32 02 PM](https://github.com/user-attachments/assets/3a882821-e761-47e4-bfba-851539d93080)
+
 ### Install ScyllaDB packages.
 
 sudo apt-get update
 
 sudo apt-get install -y scylla
 
+![Screenshot 2024-11-11 at 10 32 57 PM](https://github.com/user-attachments/assets/7226ce40-aabc-4f48-a682-878988c8ebed)
+
 ### Configure I/O settings for ScyllaDB on your VM
 
 sudo /opt/scylladb/scripts/scylla_io_setup
 
+![Screenshot 2024-11-11 at 10 33 25 PM](https://github.com/user-attachments/assets/c495a23a-fcf1-447f-a605-18957ceda9d9)
+
 ### Update configuration file of scylla
 
 sudo vi /etc/scylla/scylla.yaml
+
+![Screenshot 2024-11-11 at 10 45 27 PM](https://github.com/user-attachments/assets/516b67a6-c2eb-4ca9-94e9-c24d7fb1d7b5)
 
 #### Added the below lines in the config file:
 

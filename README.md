@@ -69,9 +69,10 @@ git clone https://github.com/OT-MICROSERVICES/salary-api.git
 ``` bash
 sudo mkdir -p /etc/apt/keyrings
 ```
-
+``` bash
 sudo gpg --homedir /tmp --no-default-keyring --keyring /etc/apt/keyrings/scylladb.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys A43E06657BAC99E3
-
+```
+``` bash
 sudo wget -O /etc/apt/sources.list.d/scylla.list http://downloads.scylladb.com/deb/debian/scylla-6.2.list
 ```
 ![Screenshot 2024-11-11 at 10 32 02 PM](https://github.com/user-attachments/assets/3a882821-e761-47e4-bfba-851539d93080)

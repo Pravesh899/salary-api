@@ -143,7 +143,6 @@ ACL SETUSER scylla on >password ~* +@all
 
 ACL LIST
 
-![Screenshot 2024-11-11 at 11 16 34 PM](https://github.com/user-attachments/assets/b6d0eba1-636a-48a2-9104-2ede131c7f97)
 
 ### Update the redis config fike
 sudo vi /etc/redis/redis.conf
@@ -159,13 +158,12 @@ sudo apt install openjdk-17-jre
 
 sudo apt install maven -y
 
-![Screenshot 2024-11-11 at 11 40 58 PM](https://github.com/user-attachments/assets/c1321697-f6c8-48ed-b982-4a67fbc35bd4)
+![Screenshot 2024-11-11 at 11 16 34 PM](https://github.com/user-attachments/assets/b6d0eba1-636a-48a2-9104-2ede131c7f97)
 
 ## Instalation of swagger
 
 sudo apt  install jq -y
-
-![Screenshot 2024-11-11 at 11 41 22 PM](https://github.com/user-attachments/assets/65bc8d96-40d0-4904-a4d6-cce0100d19ac)
+![Screenshot 2024-11-11 at 11 40 58 PM](https://github.com/user-attachments/assets/c1321697-f6c8-48ed-b982-4a67fbc35bd4)
 
 download_url=$(curl -s https://api.github.com/repos/go-swagger/go-swagger/releases/latest | \jq -r '.assets[] | select(.name | contains("'"$(uname | tr '[:upper:]' '[:lower:]')"'_amd64")) | .browser_download_url')
 
@@ -173,7 +171,7 @@ sudo curl -o /usr/local/bin/swagger -L'#' "$download_url"
 
 sudo chmod +x /usr/local/bin/swagger
 
-![Screenshot 2024-11-11 at 11 41 47 PM](https://github.com/user-attachments/assets/7820ab8d-81cd-4592-a814-1eef79804cc3)
+![Screenshot 2024-11-11 at 11 41 22 PM](https://github.com/user-attachments/assets/65bc8d96-40d0-4904-a4d6-cce0100d19ac)
 
 ## Enter into salary-api directory
 
@@ -239,13 +237,13 @@ sudo systemctl restart salary-api.service
 ### Download the zip file of the migration tool(migrate)
 curl -L https://github.com/golang-migrate/migrate/releases/download/v4.15.2/migrate.linux-amd64.tar.gz | tar xvz
 
+![Screenshot 2024-11-11 at 11 41 47 PM](https://github.com/user-attachments/assets/7820ab8d-81cd-4592-a814-1eef79804cc3)
+
 ### Move the file to below location
 sudo mv migrate /usr/local/bin/migrate
 
 ### Check the version of migrate
 migrate --version
-
-![Screenshot 2024-11-11 at 11 45 01 PM](https://github.com/user-attachments/assets/c35b4369-96c8-4658-b3ba-0ff202da5c01)
 
 ### update below config files with public IP:
 cd /salary-api
@@ -269,9 +267,9 @@ sudo vi migration.json
 ## run the clean package inside the salary-api directory
 
 mvn clean package
-
+![Screenshot 2024-11-11 at 11 45 01 PM](https://github.com/user-attachments/assets/c35b4369-96c8-4658-b3ba-0ff202da5c01)
 ![Screenshot 2024-11-11 at 11 45 12 PM](https://github.com/user-attachments/assets/200cd88b-f05f-4fa5-b62b-ee652faf1de7)
-![Screenshot 2024-11-11 at 11 52 08 PM](https://github.com/user-attachments/assets/2a4ac5ba-342d-4452-aab3-64713538598c)
+
 
 ### Install make command
 

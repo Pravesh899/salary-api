@@ -1,6 +1,6 @@
 # salary-api
 
-# Purpose
+## Purpose
 Salary API is a Java based microservice which is responsible for all the salary related transactions and records in OT-Microservices stack. The application is platform independent and can be run on multiple operating system. Java Runtime would be required to run this application.
 
 Supported features of the Salary API are:
@@ -17,7 +17,7 @@ Swagger integration for the API documentation of endpoints and payloads.
 
 Database migration using the tool called migrate.
 
-# Pre-Requisites
+## Pre-Requisites
 
 The Salary API application have some database, cache manager and package dependencies. Some of the dependencies are optional and some are mandatory. To compile the application, we only need maven as build tool, but for running the application following things are required:-
 
@@ -31,7 +31,7 @@ Maven
 
 Maven will be used as package manager to down# Step1: Installation of software Dependenciesload specific version of dependencies to run the Salary API.
 
-# System Requirements
+## System Requirements
 
 Processor	dual-core
 
@@ -41,7 +41,7 @@ Disk	20GB
 
 OS	Ubuntu(22.04)
 
-# Architecture
+## Architecture
 
 ![Screenshot 2024-11-12 at 12 31 28 AM](https://github.com/user-attachments/assets/5e165de8-db61-4c61-a23d-c67027a0988e)
 
@@ -110,35 +110,41 @@ sudo systemctl status scylla-server
 
 cqlsh 192.168.0.96 9042 -u cassandra -p cassandra
 
-### Created user ‘scylladb’ with password as ‘password
+#### Created user ‘scylladb’ with password as ‘password
 
 CREATE USER scylladb WITH PASSWORD 'password' SUPERUSER;
 
-### Created keyspace employee_db
+#### Created keyspace employee_db
 
 CREATE KEYSPACE employee_db WITH REPLICATION = { 'class': 'SimpleStrategy', 'replication_factor': 1 };
 
-### Verify the empolyee_db
+#### Verify the empolyee_db
 
 DESCRIBE KEYSPACES;
 
+![Screenshot 2024-11-11 at 10 45 42 PM](https://github.com/user-attachments/assets/21686683-9817-40e8-9b24-117bb7f26ede)
 
 # Redis Installation and Configuration
 
 sudo apt update
 sudo apt install redis-server -y
 
+![Screenshot 2024-11-11 at 11 10 37 PM](https://github.com/user-attachments/assets/4dba6c46-3416-4015-941f-e24468f128c0)
+
 ## Configuration of redis : Enter into redis
 
 redis-cli
 
-### Configure user permissions and authentication settings in redis
+#### Configure user permissions and authentication settings in redis
 
 ACL SETUSER scylla on >password ~* +@all
 
-### List the acl
+#### List the acl
 
 ACL LIST
+
+![Screenshot 2024-11-11 at 11 16 34 PM](https://github.com/user-attachments/assets/b6d0eba1-636a-48a2-9104-2ede131c7f97)
+
 ### Update the redis config fike
 sudo vi /etc/redis/redis.conf
 
@@ -153,15 +159,21 @@ sudo apt install openjdk-17-jre
 
 sudo apt install maven -y
 
+![Screenshot 2024-11-11 at 11 40 58 PM](https://github.com/user-attachments/assets/c1321697-f6c8-48ed-b982-4a67fbc35bd4)
+
 ## Instalation of swagger
 
 sudo apt  install jq -y
+
+![Screenshot 2024-11-11 at 11 41 22 PM](https://github.com/user-attachments/assets/65bc8d96-40d0-4904-a4d6-cce0100d19ac)
 
 download_url=$(curl -s https://api.github.com/repos/go-swagger/go-swagger/releases/latest | \jq -r '.assets[] | select(.name | contains("'"$(uname | tr '[:upper:]' '[:lower:]')"'_amd64")) | .browser_download_url')
 
 sudo curl -o /usr/local/bin/swagger -L'#' "$download_url"
 
 sudo chmod +x /usr/local/bin/swagger
+
+![Screenshot 2024-11-11 at 11 41 47 PM](https://github.com/user-attachments/assets/7820ab8d-81cd-4592-a814-1eef79804cc3)
 
 ## Enter into salary-api directory
 
@@ -233,6 +245,8 @@ sudo mv migrate /usr/local/bin/migrate
 ### Check the version of migrate
 migrate --version
 
+![Screenshot 2024-11-11 at 11 45 01 PM](https://github.com/user-attachments/assets/c35b4369-96c8-4658-b3ba-0ff202da5c01)
+
 ### update below config files with public IP:
 cd /salary-api
 
@@ -256,6 +270,9 @@ sudo vi migration.json
 
 mvn clean package
 
+![Screenshot 2024-11-11 at 11 45 12 PM](https://github.com/user-attachments/assets/200cd88b-f05f-4fa5-b62b-ee652faf1de7)
+![Screenshot 2024-11-11 at 11 52 08 PM](https://github.com/user-attachments/assets/2a4ac5ba-342d-4452-aab3-64713538598c)
+
 ### Install make command
 
 sudo apt install make
@@ -267,6 +284,10 @@ make run-migrations
 ## Run the java runtime command
 
 java -jar target/salary-0.1.0-RELEASE.jar
+
+## Output
+
+![Screenshot 2024-11-11 at 11 52 13 PM](https://github.com/user-attachments/assets/a990c12e-2c05-4765-b7c3-86900693e22e)
 
 ## Error ##
 

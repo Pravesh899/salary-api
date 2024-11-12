@@ -1,5 +1,9 @@
 # salary-api
 
+| **Author** | **Created on** | **Last updated by** | **Last edited on** |
+|------------|----------------|-------------|----------------------|---------------------|
+| Pravesh Kumar      | 11-11-24      | Pravesh Kumar             | 12-11-24           |
+
 ## Purpose
 Salary API is a Java based microservice which is responsible for all the salary related transactions and records in OT-Microservices stack. The application is platform independent and can be run on multiple operating system. Java Runtime would be required to run this application.
 
@@ -33,13 +37,13 @@ Maven will be used as package manager to down# Step1: Installation of software D
 
 ## System Requirements
 
-Processor	dual-core
+| **Requirement**        | **Details**                  |
+|------------------------|------------------------------|
+| **OS**                 | Ubuntu or other Linux-based OS |
+| **RAM**                | 4 GB minimum                 |
+| **Disk Space**         | 20 GB               |
+| **Processor**          | Dual-core recommended        |       
 
-RAM	4GB
-
-Disk	20GB
-
-OS	Ubuntu(22.04)
 
 ## Architecture
 
@@ -299,3 +303,7 @@ Run the command again "java -jar target/salary-0.1.0-RELEASE.jar"
 
 
 # Contact Information
+
+| **Name** | **Email address**            |
+|----------|-------------------------------|
+| Pravesh Kumar    |  pravesh.kumar611@gmail.com           |

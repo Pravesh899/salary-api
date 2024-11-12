@@ -96,10 +96,11 @@ sudo /opt/scylladb/scripts/scylla_io_setup
 sudo vi /etc/scylla/scylla.yaml
 ```
 #### Added the below lines in the config file:
-
+``` bash
 authenticator: PasswordAuthenticator
-authorizer: CassandraAuthorizer
 
+authorizer: CassandraAuthorizer
+```
 #### Updated the rpc_address with server's private IP:
 
 rpc_address: 192.168.0.96

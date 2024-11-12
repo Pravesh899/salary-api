@@ -89,8 +89,6 @@ sudo /opt/scylladb/scripts/scylla_io_setup
 
 sudo vi /etc/scylla/scylla.yaml
 
-![Screenshot 2024-11-11 at 10 45 27 PM](https://github.com/user-attachments/assets/516b67a6-c2eb-4ca9-94e9-c24d7fb1d7b5)
-
 #### Added the below lines in the config file:
 
 authenticator: PasswordAuthenticator
@@ -105,6 +103,8 @@ rpc_address: 192.168.0.96
 sudo systemctl restart scylla-server.service
 
 sudo systemctl status scylla-server
+
+![Screenshot 2024-11-11 at 10 45 27 PM](https://github.com/user-attachments/assets/516b67a6-c2eb-4ca9-94e9-c24d7fb1d7b5)
 
 ### Used below command to get into scylladb
 

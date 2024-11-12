@@ -132,7 +132,7 @@ DESCRIBE KEYSPACES;
 ```
 ![Screenshot 2024-11-11 at 10 45 42 PM](https://github.com/user-attachments/assets/21686683-9817-40e8-9b24-117bb7f26ede)
 
-# Redis Installation and Configuration
+## Redis Installation and Configuration
 ``` bash
 sudo apt update
 sudo apt install redis-server -y

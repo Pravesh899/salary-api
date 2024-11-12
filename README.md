@@ -191,7 +191,7 @@ sudo chmod +x /usr/local/bin/swagger
 ``` bash
 cd salary-api/
 ```
-### update the contact-points & host in application.yaml to your private ip address from below paths
+### Update the contact-points & host in application.yaml to your private ip address from below paths
 ``` bash
 sudo vi src/main/resources/application.yml
 
@@ -263,7 +263,7 @@ sudo mv migrate /usr/local/bin/migrate
 ``` bash
 migrate --version
 ```
-### update below config files with public IP:
+### Update below config files with public IP:
 ``` bash
 cd /salary-api
 
@@ -273,9 +273,9 @@ sudo vi src/main/java/com/opstree/microservice/salary/config/OpenAPIConfig.java
 //
 devServer.setUrl("http://18.212.99.151:8080");
 //
-
+``` bash
 sudo vi src/test/java/com/opstree/microservice/salary/config/OpenAPIConfigTests.java 
-
+```
 //
 assertEquals("http://18.212.99.151:8080", server.getUrl());
 //

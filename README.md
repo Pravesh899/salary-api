@@ -1,4 +1,4 @@
-# salary-api
+# Salary-api
 
 | **Author** | **Created on** | **Last updated by** | **Last edited on** |
 |------------|----------------|----------------------|---------------------|

@@ -68,6 +68,7 @@ git clone https://github.com/OT-MICROSERVICES/salary-api.git
 ### Install a repo file and add the ScyllaDB APT repository to your system:
 ``` bash
 sudo mkdir -p /etc/apt/keyrings
+```
 
 sudo gpg --homedir /tmp --no-default-keyring --keyring /etc/apt/keyrings/scylladb.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys A43E06657BAC99E3
 
@@ -105,7 +106,8 @@ rpc_address: 192.168.0.96
 ### Restart the scylla-server service and check the status
 ``` bash
 sudo systemctl restart scylla-server.service
-
+```
+``` bash
 sudo systemctl status scylla-server
 ```
 ![Screenshot 2024-11-11 at 10 45 27 PM](https://github.com/user-attachments/assets/516b67a6-c2eb-4ca9-94e9-c24d7fb1d7b5)
@@ -155,6 +157,8 @@ sudo vi /etc/redis/redis.conf
 #### update with private IP "bind 127.0.0.1 192.168.0.101"
 ``` bash
 sudo systemctl restart redis
+```
+``` bash
 redis-cli -h 192.168.0.101 -p 6379 ping
 ```
 ## Install Maven & Java depndancy
@@ -165,16 +169,18 @@ sudo apt install maven -y
 ```
 ![Screenshot 2024-11-11 at 11 16 34 PM](https://github.com/user-attachments/assets/b6d0eba1-636a-48a2-9104-2ede131c7f97)
 
-## Instalation of swagger
+## Installation of swagger
 ``` bash
 sudo apt  install jq -y
 ```
 ![Screenshot 2024-11-11 at 11 40 58 PM](https://github.com/user-attachments/assets/c1321697-f6c8-48ed-b982-4a67fbc35bd4)
 ``` bash
 download_url=$(curl -s https://api.github.com/repos/go-swagger/go-swagger/releases/latest | \jq -r '.assets[] | select(.name | contains("'"$(uname | tr '[:upper:]' '[:lower:]')"'_amd64")) | .browser_download_url')
-
+```
+``` bash
 sudo curl -o /usr/local/bin/swagger -L'#' "$download_url"
-
+```
+``` bash
 sudo chmod +x /usr/local/bin/swagger
 ```
 ![Screenshot 2024-11-11 at 11 41 22 PM](https://github.com/user-attachments/assets/65bc8d96-40d0-4904-a4d6-cce0100d19ac)

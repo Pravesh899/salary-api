@@ -55,6 +55,8 @@ ScyllaDB is a high-performance NoSQL database designed as a drop-in replacement 
 
 - IoT Applications: Collecting and storing data from millions of devices in real time.
 - Financial Services: Handling large amounts of transaction data with low latency for fraud detection and analytics.
+  
+![ScyllaDB-Manager](https://github.com/user-attachments/assets/4d7403a8-d947-4390-bf26-d1d032302498)
 
 ## Redis
 
@@ -73,6 +75,7 @@ Redis (Remote Dictionary Server) is an open-source, in-memory data structure sto
 - Leaderboard Systems: Using sorted sets for ranking systems in gaming or social media platforms.
 - Real-Time Analytics: Aggregating or analyzing event data in real-time, for instance, in monitoring or ad tech applications.
 
+![9c501ae0-6878-464e-bb4c-f61b40c6f8be](https://github.com/user-attachments/assets/0c103a35-b906-4df0-84ce-00bc03f7d3c6)
 
 ## Migrate
 
@@ -107,8 +110,32 @@ Maven is a build automation and dependency management tool primarily for Java ap
 - Dependency Resolution: Automatically fetching required libraries and managing their versions.
 - Multi-Module Projects: Managing large applications composed of multiple modules or libraries in a single workspace.
 - Continuous Integration: Integrates well with CI tools like Jenkins to automate the build and testing process, especially for Java applications.
+![maven-architecture-1024x250](https://github.com/user-attachments/assets/33814d03-39b7-4e99-bb55-e5173eb61dfe)
 
+## Swagger
 
+Swagger is an open-source toolset for designing, building, documenting, and testing RESTful APIs. It leverages the OpenAPI Specification (OAS) to standardize API definitions and provide interactive documentation.
+
+### Key Benefits:
+
+- Interactive Documentation: Swagger UI provides a user-friendly, interactive interface for viewing and testing API endpoints.
+- Standardized API Definition: Uses OpenAPI Specification, ensuring consistency and clarity in API documentation.
+- Client SDK Generation: Automatically generates client libraries in various languages for easier API integration.
+- Enhanced Collaboration: Helps frontend and backend teams work together effectively by offering a clear, shared API reference.
+  
+### Core Components:
+
+- Swagger UI: An interactive, web-based API documentation viewer and testing tool.
+- Swagger Editor: A tool for creating and editing OpenAPI specifications.
+- Swagger Codegen: Generates client SDKs and server stubs based on OpenAPI specs.
+- OpenAPI Specification (OAS): A standardized format for defining and documenting REST APIs.
+
+### Common Use Cases:
+
+- API Documentation: Creates comprehensive, interactive API documentation for developers and users.
+- Testing and Debugging: Allows developers to test API endpoints directly in the documentation.
+- Client SDK Generation: Streamlines API integration by providing pre-built SDKs.
+- Team Collaboration: Acts as a bridge between development teams by providing a single source of truth for API specifications.
 
 # Contact Information
 

@@ -40,4 +40,8 @@ The Salary API is a core component of the OT-Microservices project, providing fu
 - [Maven](https://maven.apache.org/)
 
 
+# Contact Information
 
+| **Name** | **Email address**            | **Github ID**
+|----------|-------------------------------|-------------------|
+| Pravesh Kumar    |  pravesh.kumar611@gmail.com           | Pravesh899 |

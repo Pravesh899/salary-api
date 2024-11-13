@@ -20,7 +20,7 @@ The Salary API is a core component of the OT-Microservices project, providing fu
   
 - It is essential in automating payroll processes, enhancing accuracy in employee compensation records, and simplifying the financial operations within the organization.
 
-## Supported features of the Salary API are:-
+### Supported features of the Salary API are:-
 
 - Spring boot based web framework, which uses tomcat as webserver.
 - ScyllaDB is used as primary database for storing all the salary data.
@@ -29,7 +29,7 @@ The Salary API is a core component of the OT-Microservices project, providing fu
 - Swagger integration for the API documentation of endpoints and payloads.
 - Database migration using the tool called migrate.
 
-## Components of the Salary API
+### Components of the Salary API
 
 - [ScyllaDB](https://www.scylladb.com/)
 

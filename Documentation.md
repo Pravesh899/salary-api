@@ -39,6 +39,9 @@ The Salary API is a core component of the OT-Microservices project, providing fu
 
 - [Maven](https://maven.apache.org/)
 
+## Architecture
+
+![Screenshot 2024-11-13 at 11 47 43 PM](https://github.com/user-attachments/assets/4b74d22c-97f8-4d12-8636-e75c9c04d350)
 
 ## ScyllaDB
 
